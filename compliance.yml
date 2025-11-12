@@ -1,0 +1,13 @@
+name: Compliance Checks
+
+on:
+  schedule:
+    - cron: '0 0 * * *' # Runs daily
+
+jobs:
+  compliance:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run compliance checks
+        run: ./scripts/compliance-check.sh
