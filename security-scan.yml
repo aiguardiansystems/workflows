@@ -1,0 +1,13 @@
+name: Security Scanning
+
+on:
+  push:
+    branches: ["main"]
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run security scan
+        run: ./scripts/security-scan.sh
